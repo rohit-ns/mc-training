@@ -12,36 +12,36 @@ export const userQueries = {
       logger.error(`error finding user with id: ${userId}`);
     }
   },
-  // login: async (parent, args) => {
-  //   try {
-  //     console.log('@@@@@@@@@@', args);
+  login: async (parent, args) => {
+    try {
+      console.log('@@@@@@@@@@', args);
 
-  //     const { input: { email,password}} = args;
-  //     console.log('>>>>>>>>>>>>>>',email,password)
+      const { input: { email,password}} = args;
+      console.log('>>>>>>>>>>>>>>',email,password)
 
     
-  //     const result = await User.findOne({ email,password });
+      const result = await User.findOne({ email,password });
 
-  //     const res = JSON.parse(JSON.stringify(result));
-  //     console.log('!!!!!!!!!!!!!!!!!!!!', res)
+      const res = JSON.parse(JSON.stringify(result));
+      console.log('!!!!!!!!!!!!!!!!!!!!', res)
     
-  //   //  console.log('token:::::::::::::::::::::::::',token);
-  //     if (!res) {
-  //       return {
-  //         message: 'Error! Please enter correct details'
-  //       }
-  //     } else {
-  //      // console.log('here',res);
-  //        const token = jwt.sign(res, config.secretkey);
-  //       return {
-  //         status: 'ok',
-  //         message: 'Login Successfully',
-  //         data: token
-  //       }
-  //     };
-  //   } catch (error) {
-  //     console.log('error:::::::::::::::::::::::',error)
-  //     return error;
-  //   }
-  // },
+    //  console.log('token:::::::::::::::::::::::::',token);
+      if (!res) {
+        return {
+          message: 'Error! Please enter correct details'
+        }
+      } else {
+       // console.log('here',res);
+         const token = jwt.sign(res, config.secretkey);
+        return {
+          status: 'ok',
+          message: 'Login Successfully',
+          data: token
+        }
+      };
+    } catch (error) {
+      console.log('error:::::::::::::::::::::::',error)
+      return error;
+    }
+  },
 };

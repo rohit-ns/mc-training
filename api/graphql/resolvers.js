@@ -4,9 +4,11 @@ import {
   productQueries,
   productMutations,
   userQueries,
+  userMutations,
 
   productSubscriptions
 } from "./modules";
+
 
 export default {
   Query: {
@@ -26,7 +28,8 @@ export default {
   },
   Mutation: {
     ...orderMutations,
-    ...productMutations
+    ...productMutations,
+    ...userMutations
   },
   // Subscription: {
   //   ...productSubscriptions

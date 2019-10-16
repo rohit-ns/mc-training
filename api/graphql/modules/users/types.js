@@ -34,11 +34,23 @@ export const userTypes = gql`
   input loginInput{
     email:String
     password:String
+    
   }
   type loginResponse{
     status:String
     message: String
     data:String
+  }
+  input registerInput{
+    email:String
+    password:String
+  }
+  type registerResponse{
+    data:newtoken
+    status:String
+  }
+  type newtoken{
+    token:String
   }
 `;
 

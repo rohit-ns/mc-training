@@ -1,17 +1,8 @@
-// module.exports = {
-//   globals: {
-//   },
-//   moduleFileExtensions: [
-//   'ts',
-//   'js'
-//   ],
-// //   transform: {
-// //   '^.+\\.tsx?$': 'ts-jest',
-// //   '^.+\\.js$': 'babel-jest'
-// //   },
-//   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
-//   testMatch: [
-//   "test/**/*.(test|spec).(ts|js)"
-//   ],
-//   testEnvironment: 'node'
-// }
+module.exports = {
+  globals: {
+  },
+  moduleFileExtensions: [ 'ts','js'],
+  transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+  testMatch: [ "**/__test__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)" ],
+  testEnvironment: 'node'
+}

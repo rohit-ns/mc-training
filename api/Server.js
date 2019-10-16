@@ -16,7 +16,6 @@ export default class Server {
     this.coreConfig = coreConfig;
     this.app = new Express();
   }
-
   get application() {
     return this.app;
   }

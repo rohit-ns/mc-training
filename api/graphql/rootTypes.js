@@ -20,6 +20,7 @@ export default gql`
   type Mutation {
     saveProduct(product: ProductInput!): ProductCore!
     saveOrder(order: OrderInput!): Order!
+    register(input:registerInput):registerResponse
    
   }
 

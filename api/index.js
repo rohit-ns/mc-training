@@ -1,7 +1,6 @@
-console.log("--------");
-import { ApolloServer, gql } from "apollo-server-express";
+import { ApolloServer } from 'apollo-server-express';
 import config from "./config";
-
+import UserAPI from './services/user'
 // import  publishSubscriptionData from './services/SocketConnector';
 import Server from "./Server";
 import Database from "./services/Database";
@@ -40,6 +39,22 @@ async function startApollo() {
     const apolloServer = new ApolloServer({
       typeDefs: [...Object.values(types)],
       resolvers,
+      dataSources: () => {
+        return {
+          userApi: new UserAPI(),
+        };
+      },
+      context: async ({ req, connection }) => {
+        if (connection) {
+          return connection.context;
+        }
+        else{
+          return {
+            apikey: req.headers.apikey
+          }
+        }
+       
+      },
       playground: config.playGround,
       introspection: config.introspection,
     });

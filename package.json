@@ -19,11 +19,13 @@
     "start:build": "nodemon public/index.js",
     "startup": "node ./public/index.js",
     "test1": "jest --coverage",
-    "test": "jest 'test/user/userLogin.test.js'"
+    "test": "jest"
   },
   "dependencies": {
+    "@now/build-utils": "^0.10.1",
+    "apollo-datasource-rest": "^0.6.5",
     "apollo-server": "^2.9.3",
-    "apollo-server-express": "^2.1.0",
+    "apollo-server-express": "^2.9.6",
     "apollo-server-micro": "^2.9.4",
     "app-root-path": "^2.2.1",
     "axios": "^0.18.0",

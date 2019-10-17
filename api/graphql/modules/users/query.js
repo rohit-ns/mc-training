@@ -14,25 +14,19 @@ export const userQueries = {
   },
   login: async (parent, args) => {
     try {
-      console.log('@@@@@@@@@@', args);
-
+      //console.log('@@@@@@@@@@', args);
       const { input: { email,password}} = args;
-      console.log('>>>>>>>>>>>>>>',email,password)
-
-    
+      //console.log('>>>>>>>>>>>>>>',email,password)
       const result = await User.findOne({ email,password });
-
       const res = JSON.parse(JSON.stringify(result));
       console.log('!!!!!!!!!!!!!!!!!!!!', res)
-    
-    //  console.log('token:::::::::::::::::::::::::',token);
+      //console.log('token:::::::::::::::::::::::::',token);
       if (!res) {
         return {
           message: 'Error! Please enter correct details'
         }
       } else {
-       // console.log('here',res);
-         const token = jwt.sign(res, config.secretkey);
+        const token = jwt.sign(res, config.secretkey);
         return {
           status: 'ok',
           message: 'Login Successfully',

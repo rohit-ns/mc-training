@@ -79,7 +79,7 @@ describe('login', function () {
 
   test('login with successfull', async () => {
     const { query,expected,queryName,context } = LoginSuccess;
-   // console.log('context',stub);
+    // console.log('context',context);
     stub.returns({
         "message": "Login Successfully",
         "status": "200",
